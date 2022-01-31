@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Multiplication table</title>
+	<font face="Times New Roman" size=8 color="White">
+	<link rel="stylesheet"href=".css">
+	
+	<script>
+		function multiply(){
+			var number = document.getElementById("number").value;
+			var myDiv = document.getElementById("disp");
+		    var myTable = document.createElement("table");
+			var myTableBody = document.createElement("tbody");
+			
+			for(var r = 0; r < 10 ; r++){
+				var row = document.createElement("tr");
+				
+				for (var c = 0; c < 1 ; c++){
+					var cel1 = document.createElement("td");
+					var celText = document.createTextNode(number + " * " + (r+1) + " = " + (number * (r+1)) );
+					cel1.appendChild(celText);
+					row.appendChild(cel1);
+				}
+				myTableBody.appendChild(row);
+				
+			}
+			myTable.appendChild(myTableBody);
+			myTable.setAttribute("border","2");
+			myDiv.appendChild(myTable);
+			
+				
+		}
+		
+		
+	</script>
+</head>
+<body background="C:\Users\chinm\Downloads\matrix pictire.jpg">
+	<form>
+		<CENTER><Enter the number<B> <input type="text" name="number" id="number" /></B>
+		
+		<input type="button" name="button" value="DISPLAY TABLE" onclick="multiply()"/>
+		
+		<div id="disp" >
+		
+		</div>
+		
+	</form>
+	
+</body>
+</font>
+</link>
+</html>
